@@ -1,0 +1,57 @@
+import random, sys, os, math, time, copy, pprint, pyperclip, re
+
+phone_regex = re.compile(r'''  #Pour extraire les numéros de téléphone d'un texte
+(\d{2}       # 2 chiffres
+(\s|-|\.)*  #Séparateur (\s - .) , ( \ devant le . car sinon c'est une commande le \ permet d'écrire) éventuel ( ? ) entre les chiffres du numéro de téléphone
+\d{2}
+(\s|-|\.)*
+\d{2}
+(\s|-|\.)*
+\d{2}
+(\s|-|\.)*
+\d{2})
+''', re.VERBOSE)
+
+numeros_telephone0 = phone_regex.findall('<Illig>< 44 Clément 06-81 28 3958 et 0103045859>') #Exemple d'utilisation
+
+print(numeros_telephone0) #dans un vrai code, on ne met pas ces commandes print intermédiaires
+                                 #elles servent à visualiser la progression du code et comprendre ce qu'il fait
+
+phone_regex_cleaner1 = re.compile(r'\s|-|\.') #Pour donner au numéro de telephone extrait, le format de notre choix
+
+numeros_telephone1 = [] 
+
+for i in range(len(numeros_telephone0)):
+    for j in range(len(numeros_telephone0[i])):
+        if len(str(numeros_telephone0[i][j])) > 9: #On va obtenir une liste, on ne veut pas des éléments vides dans notre liste ( qui seront des chaines de longueurs égales à 1 ) 
+            numeros_telephone1.append(phone_regex_cleaner1.sub('', numeros_telephone0[i][j])) #On supprime les séparateurs
+
+print(numeros_telephone1) #On va mettre des espaces entre les séries de 2 chiffres
+
+numeros_telephone2 = [] #On est pas obligé de faire une nouvelle liste à chaque fois, on peut peut être modifier les précédentes mais flemme
+
+for i in range(len(numeros_telephone1)):
+    numeros_telephone2.append(re.sub(r'(\d{2})', r'\1 ', numeros_telephone1[i])) #Pour espacer les séries de 2 chiffres
+
+print(numeros_telephone2) #On voudrait supprimer le dernier espace qu'il y a la fin de chaque élément de la liste
+
+for i in range(len(numeros_telephone2)):
+    numeros_telephone2[i] = numeros_telephone2[i].strip()
+        
+print(numeros_telephone2) #Fin de l'extraction des numéros de téléphone
+
+email_regex = re.compile(r''' #Pour extraire les adresses email
+([a-zA-Z0-9._%+-]+
+ @
+ [a-zA-Z0-9.-]+
+)
+''', re.VERBOSE)
+
+adresses_email0 = email_regex.findall('adresse email : clement.illig@lu.ey.com et yAlo-@gmail.com') #Exemple d'utilisation
+
+print(adresses_email0) #Fin de l'extraction des adresses email
+
+#Tous les print précédents doivent être supprimés dans un programme opérationnel, voici ce que le programme devrait retourner :
+
+x, y = '\n'.join(numeros_telephone2), '\n'.join(adresses_email0)
+print( "%s\n%s" %(x,y))
