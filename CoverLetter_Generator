@@ -1,0 +1,37 @@
+import docx
+
+
+def CoverLetter_generator(jobtitle, company_name):
+    
+    doc = docx.Document()
+    informations = doc.add_paragraph('Clément Illig\n')
+    informations.add_run('4 Cour du Petit Saulcy\n')
+    informations.add_run('Moulins-lès-Metz, France\n')
+    informations.add_run('illigclement@gmail.com\n')
+    informations.add_run('06 81 38 29 47\n')
+    
+    corps = doc.add_paragraph('''
+Dear Miss, Sir,
+    
+I hope you are doing well.
+    
+I graduated with a Master's degree in Mathematics specialized in Financial and Actuarial mathematics and Data Science. I would like to attach my application for the position of ''' + jobtitle +'''.
+    
+I performed my end-of-studies internship at EY Luxembourg where my main tasks where derivatives valuation work and, quantifying Climate Risk under the ECB's 2022 EU - Wide Climatic Stress Test. I gathered Data from various sources on the web including ECB and Eurostats, and used Data Science methods such as Regression and Time Series Forecasting to try and determine a relation between the Non Performing Loans Ratio and other variables such as the EU ETS Carbon prices. 
+
+Now I wish to become a ''' + jobtitle + ''' and add my skills to ''' + company_name + ''' to help achieve great things as well as learning new skills from you. This is why I am sending you my application with, enclosed, my resume.
+    
+I keep myself available for any further information.
+    
+Best Regards,
+    
+Clement Illig''')
+    
+    styles = doc.styles
+    style = doc.styles['Normal']
+    font = style.font
+    font.name = 'Trebuchet MS'
+    
+    doc.save('C:\/Users\/Enfant\/Documents\/CVLettres de Motivations\/CV Illig Clement EN\/' + jobtitle + '_' + company_name + '_CoverLetter_IlligClement.docx')
+    
+    
