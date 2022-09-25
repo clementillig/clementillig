@@ -5,10 +5,10 @@ def CoverLetter_generator(jobtitle, company_name):
     
     doc = docx.Document()
     informations = doc.add_paragraph('Clément Illig\n')
-    informations.add_run('4 Cour du Petit Saulcy\n')
-    informations.add_run('Moulins-lès-Metz, France\n')
+    informations.add_run('REMOVED\n')
+    informations.add_run('REMOVED, France\n')
     informations.add_run('illigclement@gmail.com\n')
-    informations.add_run('06 81 38 29 47\n')
+    informations.add_run('REMOVED\n')
     
     corps = doc.add_paragraph('''
 Dear Miss, Sir,
