@@ -1,0 +1,173 @@
+<!DOCTYPE html> 
+<html lang="fr">
+
+
+<head>
+
+<meta charset="utf-8" />
+
+<title> Formulaire </title> 
+
+<style type="text/css">
+		   
+		    body 
+				{ 
+				font-family : cursive;
+				background-attachment:fixed;
+				background-image : url(http://www.symphozik.info/multi/mozart/manuscrit_mozart.jpeg);
+				}
+                      		
+					
+                 header {
+				 margin-top: 50px;
+				  padding-top: 5px;
+				  padding-bottom: 5px;
+				  border : solid medium black;
+				  border-bottom: 0;
+				 }		
+                 
+                 nav {
+				 padding-top: 10px;
+				 padding-bottom : 10px;
+				 border: solid thin black;
+				 border-top: 0;
+				 border-left: solid medium black;
+				 border-right: solid medium black;
+				 }
+				 
+				 
+				 nav ul li { display:inline; 
+				 position: relative;
+				 left: 500px;
+				 }		
+                 nav li+li:before { content :" - "; }		
+				  a { text-decoration: none;
+                 color:red;
+ 				 }
+				 a:visited {
+				 color:orange;
+				 }
+				 nav a:hover {
+	                   font-weight: bold;
+                   }
+				   
+				    main , nav, header {
+				 background-color: #ffffcc ;
+				 margin-right : 100px ;
+				margin-left : 100px ; 
+				 }
+				
+				 
+                 main {
+				margin-bottom: 0px;
+				padding-top : 25px;
+				padding-right : 50px;
+				padding-left : 50px;
+				padding-bottom: 70px;
+				border: solid medium black;
+				border-top : 0;
+				 }
+				 
+				 	h1 {
+				position:absolute;
+				top: 50px;
+				left:50 px;
+				padding-left : 150px;
+			    display: inline;
+				}	
+				
+				
+				
+				</style>
+
+</head>
+
+
+
+
+
+     <body>
+	 
+	 <header>
+	 
+	
+	 
+	 </header>
+	 
+	  <h1> Formulaire </h1>
+	 
+	 <nav>
+<ul>
+	<li><a href="Musique.html">Index</a></li>
+	<li><a href="MusiqueAm%C3%A9rique.html">Amérique</a></li>
+	<li><a href="MusiqueEurope.html">Europe</a></li>
+	<li><a href="MusiqueAfrique.html">Afrique</a></li>
+	<li><a href="MusiqueAsie.html">Asie</a></li>
+	<li><a href="Formulaire.html">Formulaire</a></li>
+</ul>
+</nav>
+
+<main>
+
+     <h2> Vous et la musique </h2>
+	 
+	
+	
+
+<form method="post" action="Termine.php">
+ <fieldset>
+    <legend>Informations personnelles</legend>
+	
+	Nom :    
+	<input type="text" name="nom" required="required" />  
+    Prénom : 
+	<input type="text" name="prenom"  required="required" />
+    Date de naissance : 
+	<input type="date" name="naissance"  required="required" /> 	
+	</fieldset>
+	
+	<br />
+	
+	<fieldset>
+	<legend> La musique </legend>
+	Avez vous déjà joué un instrument / chanté ?
+	<input type="radio" name="instrument" value="oui"/> Oui	
+	<input type="radio" name="instrument" value="non"/> Non
+	<br/>
+	<textarea name="instruments" maxlength="150" cols="50" rows="3">Si oui, Le ou Lesquels ?</textarea>
+	<br/>
+	Quels genres de musiques écoutez vous ?
+	<input type="checkbox" name="genre_musique[]" value="Classique"/> Classique
+    <input type="checkbox" name="genre_musique[]" value="Rock_Metal"/>  Rock ou Metal
+    <input type="checkbox" name="genre_musique[]" value="Rap"/> Rap 
+    <input type="checkbox" name="genre_musique[]" value="Jazz"/> Jazz
+	<input type="checkbox" name="genre_musique[]" value="Blues"/> Blues
+    <input type="checkbox" name="genre_musique[]" value="Electronique"/> Electronique
+	<input type="checkbox" name="genre_musique[]" value="Electroswing"/> Electroswing
+	<input type="checkbox" name="genre_musique[]" value="Bande_son"/> Bande son de films
+	<br/>
+	&Agrave Combiens de concerts ou festival avez vous assisté ?
+	<input type="number" name="concerts" min="0"  />
+	</fieldset>
+	
+	<br />
+	
+   <input type="submit" value="Terminé" />
+	
+	
+</form>
+
+</main>
+	 
+	     </body>
+
+
+
+
+
+
+
+
+
+
+</html>

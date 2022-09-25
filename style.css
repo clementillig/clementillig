@@ -1,0 +1,82 @@
+ body 
+				{ 
+				font-family : cursive;
+				background-attachment:fixed;
+				background-image : url(http://www.symphozik.info/multi/mozart/manuscrit_mozart.jpeg);
+				}
+                      		
+					
+                 header {
+				 margin-top: 50px;
+				  padding-top: 5px;
+				  padding-bottom: 5px;
+				  border : solid medium black;
+				  border-bottom: 0;
+				 }		
+                 
+                 nav {
+				 padding-top: 10px;
+				 padding-bottom : 10px;
+				 border: solid thin black;
+				 border-top: 0;
+				 border-left: solid medium black;
+				 border-right: solid medium black;
+				 }
+				 
+				 
+				 nav ul li { display:inline; 
+				 position: relative;
+				 left: 500px;
+				 }		
+                 nav li+li:before { content :" - "; }		
+				 a { text-decoration: none;
+                 color:red;
+ 				 }
+				 a:visited {
+				 color:orange;
+				 }
+				 a:hover {
+	                   font-weight: bold;
+                   }
+				   
+				 main , nav, header {
+				 background-color: #ffffcc ;
+				 margin-right : 100px ;
+				margin-left : 100px ; 
+				 }
+				
+				 
+                 main {
+				margin-bottom: 50px;
+				padding-top : 25px;
+				padding-right : 50px;
+				padding-left : 50px;
+				padding-bottom: 70px;
+				border: solid medium black;
+				border-top : 0;
+				 }
+
+                 footer {
+				 position:fixed;
+				 bottom: 1px;
+				 right : 1px;
+				 color: white;
+				 background-color : black ;
+				 border: solid medium white ;
+				 }				 
+							
+							
+			
+							
+				h1 {
+				position:absolute;
+				top: 50px;
+				left: 20 px;
+				padding-left : 150px;
+			    display: inline;
+				}	
+				
+				
+				img {
+				 border : solid medium black;
+				 }
