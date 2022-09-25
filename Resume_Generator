@@ -1,0 +1,135 @@
+import matplotlib.pyplot as plt
+from matplotlib.offsetbox import TextArea, DrawingArea, OffsetImage, AnnotationBbox
+import matplotlib.image as mpimg
+
+def resume_generator(jobtitle, jobdescription):
+
+    %matplotlib inline
+
+    # text variables
+
+    name = 'ILLIG Clément'
+    nationality = 'French'
+    number = 'REMOVED'
+    mail = 'illigclement@gmail.com'
+    adresse1 = 'REMOVED'
+    adresse2 = 'REMOVED'
+    candidature = 'Applying to the position of'
+    education = 'EDUCATION'
+    master1 = 'Master specialized in Financial Mathematics &'
+    master2 = 'Data Sciences at University of Lorraine (2020 - 2022)'
+    master3 = 'Named "Master de Probabilités et Statistiques appliquées'
+    master4 = '(PSA)" the courses include :'
+    stochastic = '. Stochastics Models (Black & Scholes Model)'
+    extreme = ". Extreme Value Theory"
+    actuarial = '. Actuarial Sciences'
+    statistics = '. Applied Statistics : Linear and non Linear Regression'
+    banking = '. Banking Risk (Basel III, Risk Management)'
+    timeseries = '. Time Series Forecasting'
+    data = '. Data Sciences & Computer Sciences'
+    regression = ' -Linear Regression, ANOVA, CAH, K-means, PCA'
+    excel1 = ' -Excel, HTML/CSS, R'
+    coding = ' -Coding in Matlab, C, Python'
+    sql = ' -SQL, SAS'
+    machine = ' -Machine learning & Neural Networks'
+    experiences = 'EXPERIENCES'
+    internship1 = 'February - July 2022 : Internship in EY Luxembourg Risk' 
+    internship2 = 'Management Team'
+    otc = '-OTC Derivatives & Structured Product Valuation'
+    excel2 = '-Excel & VBA'
+    climatic1 = '-Climatic Risk Modelisation during the ECB 2022 EU-Wide '
+    climatic2 = 'Climatic Stress Test ( Linear and non Linear Regression,'
+    climatic3 = 'Time Series Forecasting ( ARMA ), Interpolation Methods'
+    climatic4 =' (Spline), Carbon Market )'
+    languages = 'LANGUAGES'
+    fluent = 'Fluent in French & English'
+
+    # set font
+    plt.rcParams['font.family'] = 'sans-serif'
+    plt.rcParams['font.sans-serif'] = 'STIXGeneral'
+
+    fig, ax = plt.subplots(figsize=(8.5, 11))
+
+    # Decorative Lines
+    plt.axvline(x=.1, color='#393D50', alpha=1, linewidth=300)
+    plt.axhline(y=.78, xmin=0, xmax=0.42, color='#F1E7CA', linewidth=0.5)
+    plt.axvline(x=.8, color='#F1E7CA', alpha=1, linewidth=360)
+
+
+    # set background color
+    #ax.set_facecolor('#F1E7CA')
+
+    # remove axes
+    plt.axis('off')
+
+    #on affiche les textes
+    plt.annotate(name, (0.123,0.81), weight='bold', fontsize='12', color='#F1E7CA')
+    plt.annotate(nationality, (0.01,0.76), weight='regular', fontsize='12', color='#F1E7CA')
+    plt.annotate(number, (0.01,0.74), weight='regular', fontsize='12', color='#F1E7CA')
+    plt.annotate(mail, (0.01,0.72), weight='regular', fontsize='12', color='#F1E7CA')
+    plt.annotate(adresse1, (0.01,0.70), weight='regular', fontsize='12', color='#F1E7CA')
+    plt.annotate(adresse2, (0.01,0.68), weight='regular', fontsize='12', color='#F1E7CA')
+    plt.annotate(candidature, (0.08,0.62), weight='bold', fontsize='12', color='#F1E7CA')
+    
+    
+    
+
+    plt.annotate(education, (0.625,0.95), weight='bold', fontsize='12', color='#393D50')
+    plt.annotate(master1, (0.43,0.90), weight='bold', fontsize='12', color='#393D50')
+    plt.annotate(master2, (0.43,0.88), weight='bold', fontsize='12', color='#393D50')
+    plt.annotate(master3, (0.43,0.85), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(master4, (0.43,0.83), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(stochastic, (0.43,0.79), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(actuarial, (0.43,0.77), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(extreme, (0.43,0.75), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(banking, (0.43,0.73), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(statistics, (0.43,0.71), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(timeseries, (0.43,0.69), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(data, (0.43,0.67), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(regression, (0.43,0.65), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(excel1, (0.43,0.63), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(coding, (0.43,0.61), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(sql, (0.43,0.59), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(machine, (0.43,0.57), weight='regular', fontsize='11', color='#393D50')
+
+    plt.annotate(experiences, (0.625,0.53), weight='bold', fontsize='12', color='#393D50')
+    plt.annotate(internship1, (0.43,0.48), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(internship2, (0.43,0.46), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(otc, (0.43,0.44), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(excel2, (0.43,0.42), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(climatic1, (0.43,0.40), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(climatic2, (0.43,0.38), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(climatic3, (0.43,0.36), weight='regular', fontsize='11', color='#393D50')
+    plt.annotate(climatic4, (0.43,0.34), weight='regular', fontsize='11', color='#393D50')
+    
+    if len(jobtitle)>20 and len(jobtitle)<36:
+        plt.annotate(jobtitle, (0.01,0.58), weight='bold', fontsize='12', color='#F1E7CA')
+    elif len(jobtitle)<=20:
+        plt.annotate(jobtitle, (0.065,0.58), weight='bold', fontsize='12', color='#F1E7CA')
+    else:
+        espace = jobtitle[20:].find(' ')
+        jobtitle1 = jobtitle[0:20 + espace]
+        jobtitle2 = jobtitle[21 + espace:]
+        plt.annotate(jobtitle1, (0.065,0.58), weight='bold', fontsize='12', color='#F1E7CA')
+        plt.annotate(jobtitle2, (0.065,0.56), weight='bold', fontsize='12', color='#F1E7CA')
+
+    plt.annotate(languages, (0.625,0.29), weight='bold', fontsize='12', color='#393D50')
+    plt.annotate(fluent, (0.43,0.24), weight='regular', fontsize='11', color='#393D50')
+
+    plt.annotate(jobdescription, (0.42, 0.05), weight='regular', fontsize='0.01', color='#F1E7CA')
+
+
+
+
+    # afficher la photo
+    arr_code = mpimg.imread('photo_cv.jpg')
+    imagebox = OffsetImage(arr_code, zoom=0.05)
+    ab = AnnotationBbox(imagebox, (0.205, 0.9))
+    ax.add_artist(ab)
+
+
+    try:
+        plt.savefig('C:\/Users\/Enfant\/Documents\/CVLettres de Motivations\/CV Illig Clement EN\/' + jobtitle + '_CV Illig Clément.pdf', dpi=300, bbox_inches='tight')
+    except:
+        plt.savefig('C:\/Users\/Enfant\/Documents\/CVLettres de Motivations\/CV Illig Clement EN\/' + jobtitle[:4] + '_CV Illig Clément.pdf', dpi=300, bbox_inches='tight')
+    
