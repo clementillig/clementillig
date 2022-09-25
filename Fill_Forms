@@ -1,0 +1,47 @@
+from selenium import webdriver  #imports du livre automate the boring stuff
+
+from selenium.webdriver.chrome.service import Service  #imports de forum pour faire tourner selenium correctement
+from webdriver_manager.chrome import ChromeDriverManager #pip install webdriver-manager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
+
+#Lever
+
+def fill(url):
+
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    driver.get(url)
+
+
+
+    form = driver.find_element(By.CSS_SELECTOR, "body > div.content-wrapper.application-page > div > div:nth-child(2) > form > div:nth-child(1) > ul > li:nth-child(2) > label > div.application-field > input[type=text]")
+    form.send_keys("Illig Clement")
+    form = driver.find_element(By.CSS_SELECTOR, "body > div.content-wrapper.application-page > div > div:nth-child(2) > form > div:nth-child(1) > ul > li:nth-child(3) > label > div.application-field > input[type=email]")
+    form.send_keys("illigclement@gmail.com")
+    form = driver.find_element(By.CSS_SELECTOR, "body > div.content-wrapper.application-page > div > div:nth-child(2) > form > div:nth-child(1) > ul > li:nth-child(4) > label > div.application-field > input[type=text]")
+    form.send_keys("+33681382947")
+    form = driver.find_element(By.CSS_SELECTOR, "body > div.content-wrapper.application-page > div > div:nth-child(2) > form > div:nth-child(1) > ul > li:nth-child(5) > label > div.application-field > input[type=text]")
+    form.send_keys("self employed")
+    form = driver.find_element(By.CSS_SELECTOR, "body > div.content-wrapper.application-page > div > div.section-wrapper.accent-section.small-accent.page-full-width > div > h2")
+    titre = form.text
+    form = driver.find_element(By.CSS_SELECTOR, "#additional-information")
+    time.sleep(1)
+    form.send_keys('''
+    Dear Miss, Sir,
+
+    I hope you are doing well.
+
+    I graduated with a Master's degree in Mathematics specialized in Financial and Actuarial mathematics and Data Science. I would like to attach my application for the position of ''' + titre +'''.
+
+    I performed my end-of-studies internship at EY Luxembourg where my main tasks where derivatives valuation work and, quantifying Climate Risk under the ECB's 2022 EU - Wide Climatic Stress Test. I gathered Data from various sources on the web including ECB and Eurostats, and used Data Science methods such as Regression and Time Series Forecasting to try and determine a relation between the Non Performing Loans Ratio and other variables such as the EU ETS Carbon prices. 
+
+    Now I wish to become a ''' + titre + ''' and add my skills to your team to help achieve great things as well as learning new skills from you. This is why I am sending you my application with, enclosed, my resume.
+
+    I keep myself available for any further information.
+
+    Best Regards,
+
+     Clement Illig''')
